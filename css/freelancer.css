@@ -38,7 +38,8 @@ h6 {
 
 hr.star-light,
 hr.star-primary,
-hr.star-info {
+hr.star-info,
+hr.star-contact {
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
@@ -48,7 +49,7 @@ hr.star-info {
 }
 
 hr.star-light:after {
-    content: "\f004";
+    content: "\f121";
 }
 
 hr.star-primary:after {
@@ -58,10 +59,14 @@ hr.star-primary:after {
 hr.star-info:after {
     content: "\f129";
 }
+hr.star-contact:after {
+  content: "\f003";
+}
 
 hr.star-light:after,
 hr.star-primary:after,
-hr.star-info:after {
+hr.star-info:after,
+hr.star-contact:after {
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -75,22 +80,24 @@ hr.star-light {
 }
 
 hr.star-light:after {
-    color: #d92e34;
+    color: #fff;
     background-color: black;
 }
 
-hr.star-primary {
+hr.star-primary,
+hr.star-contact {
     border-color: #2c3e50;
 }
 
-hr.star-primary:after {
+hr.star-primary:after,
+hr.star-contact:after {
     color: #2c3e50;
     background-color: #fff;
 }
 
-hr.star-info {
-    color: black;
-    background-color: #fff;
+hr.star-info:after {
+    color: #fff;
+    background-color: #18bc9c;
 }
 .img-centered {
     margin: 0 auto;
