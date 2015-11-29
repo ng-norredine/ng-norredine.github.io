@@ -58,10 +58,13 @@
                       <a href="#page-top"></a>
                   </li>
                   <li class="page-scroll">
+                      <a href="#about">About</a>
+                  </li>
+                  <li class="page-scroll">
                       <a href="#portfolio">Portfolio</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#about">About</a>
+                      <a href="#form-validation">form-validation</a>
                   </li>
                   <li class="page-scroll">
                       <a href="#contact">Contact</a>
@@ -88,6 +91,31 @@
             </div>
         </div>
     </header>
+
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-info">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Freelancer est un theme créer par Start Bootstrap. Le .zip contient les sources complètes incluant HTML, CSS, et JavaScript facile à customiser.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Cette ressource gratuite me permet donc d'exposer ma démo de «masonry» basée sur angularjs et la mettre à disposition du public.</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="http://norredine-abouriche.com/doc/norredine_abouriche_dev-front-end.pdf.zip" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> Telecharger mon cv
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Portfolio Grid Section  -->
     <section id="portfolio" ng-app="masonryApp">
@@ -118,30 +146,60 @@
         </section>
 
 
-    <!-- About Section -->
-    <section class="success" id="about">
+    <!-- form Section -->
+    <section id="form-validation" ng-app="formApp" ng-controller="RegistrationController">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>About</h2>
-                    <hr class="star-info">
+                    <h2>Form validation using Angularjs</h2>
+                    <hr class="star-valid">
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-lg-offset-2">
-                    <p>Freelancer est un theme créer par Start Bootstrap. Le .zip contient les sources complètes incluant HTML, CSS, et JavaScript facile à customiser.</p>
-                </div>
-                <div class="col-lg-4">
-                    <p>Cette ressource gratuite me permet donc d'exposer ma démo de «masonry» basée sur angularjs et la mettre à disposition du public.</p>
-                </div>
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <a href="http://norredine-abouriche.com/doc/norredine_abouriche_dev-front-end.pdf.zip" class="btn btn-lg btn-outline">
-                        <i class="fa fa-download"></i> Telecharger mon cv
-                    </a>
-                </div>
-            </div>
+
+            <div class="card register">
+            <form name="myform" ng-submit="register()" novalidate>
+
+              <div class="textintro">
+                <p>Merci de renseigner les champs suivants</p>
+                <p ng-show="message">{{ message }}</p>
+              </div>
+
+              <fieldset>
+                <input type="text" name="firstname"
+                  placeholder="Prenom"
+                  ng-model="user.firstname"
+                  ng-required="true">
+                  <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+                  Vous devez renseigner votre prenom.</p>
+
+                <input type="text" name="lastname"
+                  placeholder="Nom"
+                  ng-model="user.lastname"
+                  ng-required="true">
+                  <p class="error validationerror" ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+                  Vous devez renseigner votre nom.</p>
+
+                <input type="email" name="email"
+                  placeholder="Email"
+                  ng-model="user.email">
+                  <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">
+                  L'email est requis et doit être un email valide.</p>
+
+                <input type="password" name="password"
+                  placeholder="Password"
+                  ng-model="user.password"
+                  ng-minlength="6">
+                  <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched">
+                  Votre mot de passe doit etre d'un minimum de 6 caractères</p>
+              </fieldset>
+
+              <button type="submit" class="btn">Soumettre</button>
+            </form>
+          </div>
+
         </div>
+      </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact">
@@ -223,37 +281,7 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-masonry/angular-masonry.js"></script>
 
-    <script>
-        angular.module('masonryApp', ['wu.masonry']).
-            controller('angular-demo', function ($scope) {
-                function genBrick() {
-                    var height = ~~(Math.random() * 500) + 100;
-                    var id = ~~(Math.random() * 10000);
-                    return {
-                        src: 'http://lorempixel.com/310/' + height + '/?' + id
-                    };
-                };
-
-                $scope.bricks = [
-                    genBrick(),
-                    genBrick(),
-                    genBrick(),
-                    genBrick(),
-                    genBrick()
-                ];
-
-                $scope.add = function add() {
-                    $scope.bricks.push(genBrick());
-                };
-
-                $scope.remove = function remove() {
-                    $scope.bricks.splice(
-                        ~~(Math.random() * $scope.bricks.length),
-                        1
-                    )
-                };
-            });
-    </script>
+    <script src="js/app.js"></script>
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
