@@ -140,6 +140,26 @@
 		</div>
 	</section>
 
+	<!-- Section masonry  -->
+	<section id="masonry" style="max-width: 1170px; margin: 0 auto;" ng-app="demoMasonry">
+		<div class="row">
+			<div class="section_header">
+				<h2>Angular Mansonry</h2>
+				<span class="header_line"></span>
+				<div class="s_descr_wrap">
+					<div class="s_descr">Texte d'explication.</div>
+				</div>
+			</div>
+		</div>
+		<div data-ng-controller="demo">
+			<ul class="dynamic-grid" angular-grid="pics" grid-width="300" gutter-size="10" angular-grid-id="gallery" refresh-on-img-load="false" >
+				<li data-ng-repeat="pic in pics" class="grid" data-ng-clock>
+					<img src="{{pic.media.m}}" class="grid-img" data-actual-width = "{{pic.actualWidth}}"  data-actual-height="{{pic.actualHeight}}" />
+				</li>
+			</ul>
+		</div>
+	</section>
+
 	<!-- Section contact -->
 	<section id="form-validation" ng-app="formApp" ng-controller="RegistrationController">
 		<div class="container">
