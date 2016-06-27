@@ -1,3 +1,12 @@
+var formApp = angular.module('formApp', []);
+    formApp.controller('RegistrationController', ['$scope', function($scope) {
+
+        $scope.register = function() {
+            $scope.message = 'Bienvenue ' + $scope.user.firstname;
+        };
+
+    }]);
+
 var demoMasonry = angular.module('demoMasonry', ['angularGrid'])
     .service('imageService',['$q','$http',function($q,$http){
         this.loadImages = function(){

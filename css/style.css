@@ -399,7 +399,8 @@ section {
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
 }
-	/* ==========================================================
+
+/* ==========================================================
 ! section header
 ========================================================== */
 
@@ -432,6 +433,20 @@ section {
 	font-family: 'Open Sans', sans-serif;
 	font-weight:400;
 	padding:0px 100px;
+}
+
+.section_contact {
+    text-align:center;
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.section_contact h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:35px;
+    padding-bottom:40px;
 }
 
 /* ==========================================================
@@ -688,18 +703,19 @@ section#featured{
 	color:#000;
 	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
-	 -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
-  outline: none;
-  box-shadow:none;
-  -webkit-box-shadow:none;
-  -moz-box-shadow:none;
-  border-radius:0;
-  -webkit-border-radius:0;
-  -moz-border-radius:0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-shadow:none;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
 }
+
 .form-group textarea{
 	display:block;
 	line-height:16px;
@@ -715,28 +731,102 @@ label {
 	font-weight:700;
 	padding-top:10px;
 }
+
 .inner-addon { 
     position: relative; 
 }
+
 .inner-addon .fa {
   position: absolute;
   padding: 10px 10px;
   
   pointer-events: none;
 }
+
 .left-addon .fa  { left:  0px;}
 .left-addon input, .left-addon textarea  { padding-left:  40px; }
 .form_button{
 	text-align:center;
-	
 }
 
 input[type=text]:focus, textarea:focus {
     border-bottom:2px solid #d64541;
-
 }
+
 .inner-addon .fa {
     color:#d64541;
+}
+
+.card {
+
+    width: 100%;
+    max-width: 850px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 40px;
+    text-align: center;
+    position: relative;
+    opacity: .95;
+}
+
+@media all and (max-width: 400px) {
+    main {
+        width: 100%;
+    }
+}
+
+input {
+    width: 100%;
+    display: inline-block;
+    font-weight: 100;
+    padding: 15px;
+    margin: 5px 0;
+    color: #475B62;
+    border: 1px solid #C5C5C5;
+    border-radius: 4px;
+    outline: 0;
+}
+
+input[type=radio] {
+    width: auto;
+}
+
+.ng-enter.ng-enter-active,
+.ng-leave {
+    opacity: 1;
+    height: 80px;
+    overflow: hidden;
+}
+
+.ng-leave.ng-leave-active,
+.ng-enter {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+fieldset {
+    margin: 10px 0;
+}
+
+.textintro h1 {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+input.ng-invalid.ng-touched {
+    border: 1px solid #DA3637;
+}
+
+input.ng-valid.ng-touched {
+    border: 1px solid #509D12;
+}
+
+.error {
+    color: red;
+    padding-bottom: 10px;
 }
 
 /* ==========================================================
